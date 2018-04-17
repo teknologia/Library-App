@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/rit_logo" />
+
+    <TextView
+        android:id="@+id/HSS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:text="Under the Guidance of: HSS" />
+
+    <TextView
+        android:id="@+id/rohit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HSS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Rohit Keshri - 1MS15IS093" />
+
+    <TextView
+        android:id="@+id/shaswat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rohit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Shaswat - 1MS15IS109" />
+
+    <TextView
+        android:id="@+id/ujjwal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shaswat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Ujjwal Narayan Lal - 1MS15IS131" />
+
+    <TextView
+        android:id="@+id/swapnil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ujjwal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:text="Swapnil Kalra - 1MS15IS141" />
+</RelativeLayout>
