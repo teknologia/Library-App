@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/l5">
 
     <EditText
         android:id="@+id/my_code"
@@ -9,9 +11,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:ems="10"
         android:hint="User Code"
-        android:inputType="textCapCharacters|textCapWords|textCapSentences|textPersonName" />
+        android:inputType="textCapCharacters|textCapWords|textCapSentences|textPersonName"
+        android:textColorHint="@android:color/holo_green_light" />
 
     <Button
         android:id="@+id/button_my_book"
@@ -20,5 +24,6 @@
         android:layout_below="@+id/my_code"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
+        android:backgroundTint="@android:color/holo_red_light"
         android:text="Submit" />
 </RelativeLayout>

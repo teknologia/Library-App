@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -107,7 +108,9 @@ public class SearchBookActivity extends Activity {
              */
                     buffer.append("Name: "+testdata.getString(2)+"\n");
                     buffer.append("Author: "+testdata.getString(3)+"\n");
+              //      buffer.append("Status: "+testdata.getString(8)+"\n\n");
                     buffer.append("Status: "+testdata.getString(8)+"\n\n");
+
 
                 }
 
@@ -128,6 +131,8 @@ public class SearchBookActivity extends Activity {
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(Message);
+        //builder.setTitle(Html.fromHtml("<font color='#FF7F27'>"+title+"</font>"));
+        //builder.setMessage(Html.fromHtml("<font color='#FF7F20'>"+Message+"</font>"));
         builder.show();
     }
 

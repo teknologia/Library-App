@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/l2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="myapps.com.pbl.MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -28,6 +29,7 @@
         android:layout_alignEnd="@+id/textView5"
         android:layout_below="@+id/button_my_book"
         android:layout_marginTop="27dp"
+        android:backgroundTint="#baa3c5"
         android:text="WISHLIST" />
 
     <Button
@@ -37,6 +39,7 @@
         android:layout_below="@+id/button_search_book"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
+        android:backgroundTint="#baa3c5"
         android:text="MY BOOKS" />
 
     <Button
@@ -46,6 +49,7 @@
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
+        android:backgroundTint="#baa3c5"
         android:text="SEARCH BOOK" />
 
     <FrameLayout
@@ -54,8 +58,6 @@
         android:layout_height="match_parent">
 
     </FrameLayout>
-
-
 
 
 </RelativeLayout>
