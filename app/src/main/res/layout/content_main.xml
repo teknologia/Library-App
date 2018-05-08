@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="LIBSYS"
+        android:text="Welcome to RIT LibApp"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -26,9 +26,9 @@
         android:id="@+id/button_wishlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView5"
         android:layout_below="@+id/button_my_book"
-        android:layout_marginTop="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#baa3c5"
         android:text="WISHLIST" />
 
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_search_book"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#baa3c5"
         android:text="MY BOOKS" />
 
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#baa3c5"
         android:text="SEARCH BOOK" />
 

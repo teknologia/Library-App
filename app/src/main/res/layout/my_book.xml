@@ -24,6 +24,6 @@
         android:layout_below="@+id/my_code"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:text="Submit" />
 </RelativeLayout>

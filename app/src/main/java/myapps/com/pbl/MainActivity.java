@@ -116,7 +116,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_feedback) {
+            //finish();
+            //return true;
+            Intent Email = new Intent(Intent.ACTION_SEND);
+            Email.setType("text/email");
+            Email.putExtra(Intent.EXTRA_EMAIL, new String[] { "shaswat_dba@yahoo.com" });
+            Email.putExtra(Intent.EXTRA_SUBJECT, "RIT LibApp Feedback");
+            //Email.putExtra(Intent.EXTRA_TEXT, "Dear ...," + "");
+            startActivity(Intent.createChooser(Email, "Send Feedback:"));
+        }
+        else if (id == R.id.action_settings) {
             finish();
             //return true;
         }
