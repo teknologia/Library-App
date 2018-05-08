@@ -3,6 +3,7 @@ package myapps.com.pbl;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 /*
@@ -46,7 +49,10 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //To prevent the navigation drawer icon from becoming greyish
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -132,10 +138,13 @@ public class MainActivity extends AppCompatActivity
             //fragmentManager.beginTransaction().replace(R.id.content_frame,new FirstFragment()).commit();
 
         } else if (id == R.id.nav_second_layout) {
-            Intent i=new Intent(MainActivity.this,SecondFragment.class);
-            startActivity(i);
+            //Intent i=new Intent(MainActivity.this,SecondFragment.class);
+            //startActivity(i);
             //fragmentManager.beginTransaction().replace(R.id.content_frame,new SecondFragment()).commit();
 
+            Uri uri = Uri.parse("http://msrit.edu/facilities/library.html"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
 
         } else if (id == R.id.nav_third_layout) {
             Intent i=new Intent(MainActivity.this,ThirdFragment.class);
@@ -144,10 +153,26 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            try {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT,"RIT LibApp");
+                String sAux = "\nTry out this Amazing Application-RIT LibApp!\n\n";
+                sAux = sAux + "https://drive.google.com/open?id=1eyLayfEeuixDUZNQ75UKdz_-ppTc_L4d \n\n";
+                i.putExtra(Intent.EXTRA_TEXT, sAux);
+                startActivity(Intent.createChooser(i, "Share via"));
+            } catch(Exception e) {
+                //e.toString();
+            }
 
         }
+
+        else if (id == R.id.nav_madeInIndia) {
+
+            Intent i=new Intent(MainActivity.this,MadeInIndia.class);
+            startActivity(i);
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

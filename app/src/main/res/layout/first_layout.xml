@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d6daed">
 
 
     <TextView
@@ -23,6 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="How to Use?"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -33,7 +36,8 @@
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        android:text="1.Search Book-By Book/Author Name" />
+        android:text="1.Search Book-By Book/Author Name"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
         android:id="@+id/textView6"
@@ -41,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:text="2.View the Books Issued By a User" />
+        android:layout_marginTop="30dp"
+        android:text="2.View the Books Issued By a User"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
         android:id="@+id/textView7"
@@ -50,8 +55,20 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView6"
-        android:layout_marginTop="27dp"
-        android:text="3.Add Books to your Wishlist" />
+        android:layout_marginTop="30dp"
+        android:text="3.Add Books to your Wishlist"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:text="We strongly recommend not sharing this application through any third-party apps.  like ShareIt  Xender,etc. as we maintain a customized Wishlist for each User!"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark" />
 
 
 </RelativeLayout>

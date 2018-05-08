@@ -3,9 +3,13 @@ package myapps.com.pbl;
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,7 +47,11 @@ public class MyBooksActivity extends Activity {
         @Override
         public void onClick(View view) {
 
-            name=e.getText().toString().toUpperCase();
+            name=e.getText().toString().toUpperCase().trim();
+            if(name.equals("")||name==null){
+                Toast.makeText(MyBooksActivity.this, "Field cannot be Left Blank!", Toast.LENGTH_SHORT).show();
+                return;
+            }
             Toast.makeText(MyBooksActivity.this, name, Toast.LENGTH_SHORT).show();
 
             //showMessage("Hello","World");
@@ -103,8 +111,39 @@ public class MyBooksActivity extends Activity {
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(Message);
+        //builder.setTitle(title);
+        //builder.setMessage(Message);
+        // Initialize a new foreground color span instance
+        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.BLUE);
+
+        // Initialize a new spannable string builder instance
+        SpannableStringBuilder ssBuilder = new SpannableStringBuilder(title);
+
+        // Apply the text color span
+        ssBuilder.setSpan(
+                foregroundColorSpan,
+                0,
+                title.length(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+
+        // Set the alert dialog title using spannable string builder
+        builder.setTitle(ssBuilder);
+        builder.setCancelable(true);
+        //builder.setTitle(title);
+        ForegroundColorSpan foregroundColorSpan2 = new ForegroundColorSpan(getResources().getColor(R.color.green));
+        SpannableStringBuilder ssBuilder2 = new SpannableStringBuilder(Message);
+
+        //Log.i(TAG, "showMessage: "+Message.length());
+        // Apply the text color span
+        ssBuilder2.setSpan(
+                foregroundColorSpan2,
+                0,
+                Message.length(),
+                Spanned.SPAN_EXCLUSIVE_INCLUSIVE
+        );
+
+        builder.setMessage(ssBuilder2);
         builder.show();
     }
 

@@ -5,6 +5,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,16 +13,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class DataBaseHelperSearchBook extends SQLiteOpenHelper
+public class DataBaseHelperWishlist extends SQLiteOpenHelper
+
 {
-    private static String TAG = "DataBaseHelperSearchBook"; // Tag just for the LogCat window
+    private static String TAG = "DataBaseHelperWishlist"; // Tag just for the LogCat window
     //destination path (location) of our database on device
     private static String DB_PATH = "";
-    private static String DB_NAME ="book details";// Database name
+    private static String DB_NAME ="Wishlist";// Database name
+    private static String TABLE_NAME="MyWishlist";
     private SQLiteDatabase mDataBase;
     private final Context mContext;
 
-    public DataBaseHelperSearchBook(Context context)
+    public DataBaseHelperWishlist(Context context)
     {
         super(context, DB_NAME, null, 1);// 1? Its database Version
         if(android.os.Build.VERSION.SDK_INT >= 17){
@@ -31,7 +34,8 @@ public class DataBaseHelperSearchBook extends SQLiteOpenHelper
         {
             DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         }
-
+        //DB_PATH=context.getFilesDir().getPath();
+        Log.i(TAG, "DataBaseHelperWishlist: Path"+DB_PATH);
         this.mContext = context;
     }
 
@@ -39,11 +43,14 @@ public class DataBaseHelperSearchBook extends SQLiteOpenHelper
     {
         //If the database does not exist, copy it from the assets.
 
+
         boolean mDataBaseExist = checkDataBase();
+        //Toast.makeText(mContext, ""+mDataBaseExist, Toast.LENGTH_SHORT).show();
+        Log.i(TAG, "createDataBase: "+mDataBaseExist);
         if(!mDataBaseExist)
         {
-            this.getReadableDatabase();
-            this.close();
+            //this.getWritableDatabase();
+            //this.close();
             try
             {
                 //Copy the database from assests
@@ -55,6 +62,10 @@ public class DataBaseHelperSearchBook extends SQLiteOpenHelper
                 throw new Error("ErrorCopyingDataBase");
             }
         }
+       // else{
+            mDataBase.execSQL("create table if not exists "+TABLE_NAME+"( book_id varchar(10) primary key,book_name varchar(30));");
+            //mDataBase.execSQL("insert into "+TABLE_NAME+" values('1','abc');");
+        //}
     }
 
     //Check that the database exists here: /data/data/your package/databases/Da Name
@@ -103,10 +114,20 @@ public class DataBaseHelperSearchBook extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
+        try {
+            createDataBase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    SQLiteDatabase getmDataBase(){
+        return mDataBase;
     }
 }

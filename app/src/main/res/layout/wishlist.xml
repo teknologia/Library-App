@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="1"
+    android:background="@drawable/l9">
+
+    <!--
+    <EditText
+        android:id="@+id/usr_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:ems="10"
+        android:hint="User Code"
+        android:inputType="textPersonName" />
+        -->
+
+    <Button
+        android:id="@+id/wish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:background="@android:color/holo_red_light"
+        android:foreground="@android:color/white"
+        android:padding="5dp"
+        android:text="Add to Wishlist"
+        android:textColor="@android:color/white"
+        android:textColorLink="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/book_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:ems="10"
+        android:hint="Book Code"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/show_wish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wish_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/holo_red_light"
+        android:foreground="@android:color/white"
+        android:padding="5dp"
+        android:text="Show Wishlist"
+        android:textColor="@android:color/white"
+        android:textColorLink="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/del_wish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_wish_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:background="@android:color/holo_red_light"
+        android:foreground="@android:color/white"
+        android:padding="5dp"
+        android:text="Remove from Wishlist"
+        android:textColor="@android:color/white"
+        android:textColorLink="@color/colorAccent" />
+</RelativeLayout>
